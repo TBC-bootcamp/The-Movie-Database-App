@@ -12,26 +12,7 @@ Splash screen is first page which last only 2.5 seconds (2500 ms). Logo is not o
 
 Lets discuss activities by little chart that describes every activitiies' possible directions.
 
-```mermaid
-graph TD
-SplashActivity -- 2.5s --> AuthActivity
-AuthActivity --> LoginFragment
-AuthActivity --> SignUpFragment
-SignUpFragment --> LoginFragment
-LoginFragment --> HomeActivity
-HomeActivity --> MovieDetailsActivity
-MovieDetailsActivity --> YoutubeTrailer
-MovieDetailsActivity -- Similar Movies --> MovieDetailsActivity 
-HomeActivity --> TVShowDetailsActivity
-TVShowDetailsActivity --> YoutubeTrailer
-TVShowDetailsActivity-- Similar Movies --> TVShowDetailsActivity
-HomeActivity --> SearchActivity
-SearchActivity --> MovieDetailsActivity
-SearchActivity --> TVShowDetailsActivity
-HomeActivity --> DashBoadActivity
-```
-
-
+<img src="https://i.imgur.com/GcpNmZP.png" width="1000">
 
 
 # Danger !!! More Technical Zone
@@ -81,41 +62,7 @@ we all know that there are some discussions about MVC versus MVVM. i used both o
 >Yellow - Behavioral/feature-based Packages
 >Blue - Functional packages/classes 
 
-```mermaid
-graph TD
-MainPackage((MainPackage)) --> Apis
-MainPackage --> Models
-MainPackage --> RecyclerView's
-
-MainPackage --> UI((UI Package))
-UI --> Authentication
-UI --> Dashboard
-UI --> DetailsPage
-DetailsPage --> ViewModels
-DetailsPage --> Activities(Activities)
-
-UI --> HomePage
-HomePage --> ViewPagerSlider
-HomePage --> HomeActivity(HomeActivity)
-
-UI --> SearchSystem
-SearchSystem --> SearchActivity(SearchActivity)
-
-style MainPackage fill:#32a852
-style UI fill:#32a852
-style Authentication fill:#d6f013
-style Dashboard fill:#d6f013
-style DetailsPage fill:#d6f013
-style HomePage fill:#d6f013
-style SearchSystem fill:#d6f013
-style Authentication fill:#d6f013
-style Authentication fill:#d6f013
-style ViewModels fill:#65aaf0
-style Activities fill:#65aaf0
-style ViewPagerSlider fill:#65aaf0
-style HomeActivity fill:#65aaf0
-style SearchActivity fill:#65aaf0
-```
+<img src="https://i.imgur.com/6iI5iQ3.png">
 
 # Screens
 
@@ -130,7 +77,7 @@ style SearchActivity fill:#65aaf0
 
 # Credits
 
- <img src="https://www.themoviedb.org/assets/1/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg" width="100px" href="https://developers.themoviedb.org">
+ <img src="https://www.themoviedb.org/assets/1/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg" width="100px"> https://developers.themoviedb.org
 
-<img src="https://avatar.cdnpk.net/23.jpg" width="100px" href="https://freepik.com">
+<img src="https://avatar.cdnpk.net/23.jpg" width="100px"> https://freepik.com
 
