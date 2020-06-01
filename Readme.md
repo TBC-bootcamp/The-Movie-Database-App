@@ -66,7 +66,7 @@ we all know that there are some discussions about MVC versus MVVM. i used both o
 
 # Screens
 
-<img src="https://i.imgur.com/kLjD1cW.png" width="50px"><img src="https://i.imgur.com/YlBH6dG.png" width="50px"><img src="https://i.imgur.com/TCgzy0n.png" width="50px"><img src="https://i.imgur.com/2CGzuy3.png" width="50px"><img src="https://i.imgur.com/EpInUaA.png" width="50px"><img src="https://i.imgur.com/GwzZD3C.png" width="50px"><img src="https://i.imgur.com/OaIZTZW.png" width="50px">
+<img src="https://i.imgur.com/kLjD1cW.png" width="200px"><img src="https://i.imgur.com/YlBH6dG.png" width="200px"><img src="https://i.imgur.com/TCgzy0n.png" width="200px"><img src="https://i.imgur.com/2CGzuy3.png" width="200px"><img src="https://i.imgur.com/EpInUaA.png" width="200px"><img src="https://i.imgur.com/GwzZD3C.png" width="200px"><img src="https://i.imgur.com/OaIZTZW.png" width="200px">
 
 # Credits
 
