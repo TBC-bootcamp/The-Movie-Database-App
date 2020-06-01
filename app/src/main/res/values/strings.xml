@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">TheMovieDB</string>
+    <string name="the_moviedb">The MovieDB</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_text">Millions of movies, TV shows and people to discover. Explore now.</string>
+    <string name="search_for_movie_or_tv_show">Search for movie or TV show…</string>
+    <string name="search">Search</string>
+    <string name="watch_trailer">Watch Trailer</string>
+    <string name="about_this_movie">About This Movie</string>
+    <string name="created_by">Created By</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="trending_tv_shows_this_week">Trending TV Shows This Week</string>
+    <string name="trending_movies_this_week">Trending Movies This Week</string>
+    <string name="join_today_desc">Get access to maintain your own custom personal lists, track what you\'ve seen and search</string>
+    <string name="join_today">Join Today</string>
+    <string name="todo">TODO</string>
+    <string name="log_in">Log In</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="go_back_to_login">Go Back to login</string>
+    <string name="sign_out">sign out</string>
+    <string name="change_your_password">Change your Password</string>
+    <string name="new_password_here">New password here</string>
+    <string name="submit">Submit</string>
+    <string name="change_your_email">Change your Email</string>
+    <string name="new_email_here">New Email here</string>
+    <string name="upload_profile_picture">Upload Profile Picture</string>
+    <string name="your_name">Your Name</string>
+</resources>

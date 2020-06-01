@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home_page.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.home_page.MainActivity">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/im_header_background"
+                android:contentDescription="@string/todo" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_gravity="end"
+                android:id="@+id/dashboardImageView"
+                android:layout_margin="15dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@mipmap/ic_profile"
+                tools:srcCom="@tools:sample/avatars"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sans_pro_bold"
+                    android:text="@string/welcome"
+                    android:textColor="#FFF"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sans_pro_regular"
+                    android:text="@string/welcome_text"
+                    android:textAlignment="textStart"
+                    android:textColor="#FFF"
+                    android:textSize="18sp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/searchBarEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:autofillHints="@string/search_for_movie_or_tv_show"
+                        android:background="@drawable/search_bar_edit_text_style"
+                        android:hint="@string/search_for_movie_or_tv_show"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="5dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical|end"
+                        android:background="@drawable/search_bar_button_style"
+                        android:text="@string/search"
+                        android:textAllCaps="false"
+                        android:textColor="#FFF" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+        <ProgressBar
+            android:id="@+id/viewPagerProgressbar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp">
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/airingTodayViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+            </androidx.viewpager.widget.ViewPager>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end|center_vertical"
+                android:src="@mipmap/ic_next"
+                android:contentDescription="@string/todo" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_height="20dp"
+                android:layout_gravity="start|center_vertical"
+                android:src="@mipmap/ic_prev"
+                android:contentDescription="@string/todo" />
+
+        </FrameLayout>
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:tabBackground="@drawable/tab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/trending_movies_this_week"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weeklyTrendingMoviesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/trending_tv_shows_this_week"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weeklyTrendingTVsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
