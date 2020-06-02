@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.themoviedb.ui.home_page.MainActivity
+import com.example.themoviedb.ui.home_page.HomeActivity
 
 import com.example.themoviedb.R
-import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
@@ -46,7 +45,7 @@ class LoginFragment : Fragment() {
             if(email.isNotEmpty() && password.isNotEmpty()){
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getAuthActivity()) {
                     if (it.isSuccessful) {
-                        getAuthActivity().startActivity(Intent(getAuthActivity(), MainActivity::class.java))
+                        getAuthActivity().startActivity(Intent(getAuthActivity(), HomeActivity::class.java))
                         getAuthActivity().finish()
                     } else {
                         Toast.makeText(context, "შეცდომაა !", Toast.LENGTH_LONG).show()

@@ -22,11 +22,11 @@ import com.example.themoviedb.ui.home_page.viewpager_slider.ViewPagerAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_home.*
 import retrofit2.Response
 import java.io.File
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     // Firebase Authentication
     private var mAuth = FirebaseAuth.getInstance()
 
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
 
         // ViewPager
         viewPagerAdapter = ViewPagerAdapter(this, viewPagerTVList, object : ViewItemClickListener {

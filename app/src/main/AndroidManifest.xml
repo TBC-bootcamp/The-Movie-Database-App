@@ -27,7 +27,7 @@
         <activity android:name="com.example.themoviedb.ui.authentication.AuthActivity" />
         <activity android:name="com.example.themoviedb.ui.details_page.TvShowDetailsActivity" />
         <activity android:name="com.example.themoviedb.ui.details_page.MovieDetailsActivity" />
-        <activity android:name=".ui.home_page.MainActivity" />
+        <activity android:name=".ui.home_page.HomeActivity" />
     </application>
 
 </manifest>
