@@ -14,10 +14,10 @@ import retrofit2.http.Url
 object HttpRequests {
 
     val retrofit = Retrofit.Builder()
-        .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(ScalarsConverterFactory.create())
 //        .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("http://api.themoviedb.org/3/")
-        .build()
+            .baseUrl("http://api.themoviedb.org/3/")
+            .build()
 
     val service = retrofit.create(ApiService::class.java)
 
@@ -42,27 +42,31 @@ object HttpRequests {
 
     fun getMovieDetails(id: Int, callback: CustomCallback) {
         service.getMovieDetails(id.toString(), ApiPaths.API_KEY, "credits")
-            .enqueue(onCallback(callback))
+                .enqueue(onCallback(callback))
     }
 
     fun getTVShowDetails(id: Int, callback: CustomCallback) {
         service.getTvShowDetails(id.toString(), ApiPaths.API_KEY, "credits")
-            .enqueue(onCallback(callback))
+                .enqueue(onCallback(callback))
     }
 
     fun getSearchMovies(queryString: String, callback: CustomCallback) {
         service.searchMovies(ApiPaths.API_KEY, queryString).enqueue(onCallback(callback))
     }
 
-    fun getSimilarMovies(movieID : Int, callback: CustomCallback){
-        service.similarMovies(movieID.toString(), ApiPaths.API_KEY).enqueue(onCallback(callback))
+    fun getSimilarMovies(movieID: Int, callback: CustomCallback) {
+        service.similarMovies("movie", movieID.toString(), ApiPaths.API_KEY).enqueue(onCallback(callback))
     }
 
-    fun getVideos(mediaType: String, movieID: Int, callback: CustomCallback){
+    fun getSimilarTVShows(movieID: Int, callback: CustomCallback) {
+        service.similarMovies("tv", movieID.toString(), ApiPaths.API_KEY).enqueue(onCallback(callback))
+    }
+
+    fun getVideos(mediaType: String, movieID: Int, callback: CustomCallback) {
         service.movieVideos(mediaType, movieID.toString(), ApiPaths.API_KEY).enqueue(onCallback(callback))
     }
 
-    fun getAiringTodayTV(callback: CustomCallback){
+    fun getAiringTodayTV(callback: CustomCallback) {
         service.getAiringTodayTV(ApiPaths.API_KEY).enqueue(onCallback(callback))
     }
 
@@ -82,36 +86,37 @@ object HttpRequests {
 
         @GET("movie/{movie_id}?")
         fun getMovieDetails(
-            @Path("movie_id") id: String,
-            @Query("api_key") apiKey: String,
-            @Query("append_to_response") response: String
+                @Path("movie_id") id: String,
+                @Query("api_key") apiKey: String,
+                @Query("append_to_response") response: String
         ): Call<String>
 
 
         @GET("tv/{tv_id}?")
         fun getTvShowDetails(
-            @Path("tv_id") id: String,
-            @Query("api_key") apiKey: String,
-            @Query("append_to_response") response: String
+                @Path("tv_id") id: String,
+                @Query("api_key") apiKey: String,
+                @Query("append_to_response") response: String
         ): Call<String>
 
         @GET("search/movie?")
         fun searchMovies(
-            @Query("api_key") apiKey: String,
-            @Query("query") queryString: String,
-            @Query("include_adult") adult: String = "false"
+                @Query("api_key") apiKey: String,
+                @Query("query") queryString: String,
+                @Query("include_adult") adult: String = "false"
         ): Call<String>
 
-
-        @GET("movie/{movie_id}/similar?")
+        @GET("{media_type}/{movie_id}/similar?")
         fun similarMovies(
+                @Path("media_type") mediaType: String,
                 @Path("movie_id") id: String,
                 @Query("api_key") apiKey: String
         ): Call<String>
 
+
         @GET("{media_type}/{movie_id}/videos?")
         fun movieVideos(
-                @Path("media_type") mediaType : String,
+                @Path("media_type") mediaType: String,
                 @Path("movie_id") id: String,
                 @Query("api_key") apiKey: String
         ): Call<String>

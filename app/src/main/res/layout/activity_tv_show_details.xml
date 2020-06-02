@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:bind="http://schemas.android.com/apk/res-aut"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -61,6 +60,7 @@
                             android:id="@+id/movieTitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro_bold"
                             android:text="@{model.tvShow.name}"
                             android:textColor="#000"
                             android:textSize="20sp"
@@ -70,6 +70,7 @@
                             android:id="@+id/movieReleaseDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro_regular"
                             android:text="@{model.tvShow.firstAirDate}"
                             android:textColor="#000" />
 
@@ -77,6 +78,7 @@
                             android:id="@+id/movieGenres"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/source_sans_pro_light"
                             android:text="@{model.genres()}"
                             android:textColor="#000"
                             android:textSize="12sp"
@@ -176,7 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="Duration"
+                        android:text="@string/duration"
                         android:textSize="12sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -188,6 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/source_sans_pro_bold"
                 android:text="@string/about_this_movie"
                 android:textColor="#4C4C4C"
                 android:textSize="15sp"
@@ -201,6 +204,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:ellipsize="end"
+                android:fontFamily="@font/source_sans_pro_regular"
                 android:text="@{model.tvShow.overview}"
                 android:textColor="#4C4C4C"
                 android:textSize="15sp"
@@ -208,55 +212,75 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_height="wrap_content" >
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/cast"
+                    android:textColor="@android:color/black"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:text="Cast"
-                    android:textColor="@android:color/black"/>
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/tvShowCastRecyclerView"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:background="@drawable/creators_recyclerview_background"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_height="wrap_content" >
+                android:orientation="vertical">
 
                 <TextView
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/similar_tv_shows"
                     android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/similarTVShowsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/creators_recyclerview_background"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
                     android:text="@string/created_by"
-                    android:textColor="@android:color/white"/>
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/creatorsRecyclerView"
-                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp" />
             </LinearLayout>
 
         </LinearLayout>
-
-
 
 
     </ScrollView>

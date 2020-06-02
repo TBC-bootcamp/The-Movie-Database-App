@@ -28,4 +28,8 @@
     <string name="new_email_here">New Email here</string>
     <string name="upload_profile_picture">Upload Profile Picture</string>
     <string name="your_name">Your Name</string>
+    <string name="similar_tv_shows">Similar TV Shows</string>
+    <string name="similar_movies">Similar Movies</string>
+    <string name="duration">Duration</string>
+    <string name="cast">Cast</string>
 </resources>
